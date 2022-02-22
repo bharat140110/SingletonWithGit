@@ -2,7 +2,7 @@ package com.nw.singleton;
 
 import java.io.Serializable;
 
-public class DateUtil  implements Serializable, Cloneable {
+public class DateUtil implements Serializable, Cloneable {
 
 	private static volatile DateUtil instance;
 
@@ -11,12 +11,11 @@ public class DateUtil  implements Serializable, Cloneable {
 	}
 
 	public static DateUtil getObject() {
-		if (instance == null) {
-			synchronized (DateUtil.class) {
-				if (instance == null)
-					instance = new DateUtil();
-			}
+		{
+			if (instance == null)
+				instance = new DateUtil();
 		}
+
 		return instance;
 	}
 
